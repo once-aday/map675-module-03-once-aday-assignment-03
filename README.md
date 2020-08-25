@@ -4,14 +4,14 @@
 
 **Client:**
 
-- [Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute]()
+- Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute, Show Results
 
 
 **Server:**
 
-Concatenate Attribute Results of Multi-Polygon (Dataset B) that Intersects with a Multi-Polygon (Dataset A) by a Specific Attribute.
+- Concatenate Attribute Results of Multi-Polygon (Dataset B) that Intersects with a Multi-Polygon (Dataset A) by a Specific Attribute. For Large Datasets.
 
-Distance from many polygons
+- Distance from many polygons
 
 
 
@@ -23,7 +23,7 @@ I was able to get the script working by using the intersect method of turf
 
 There were lots of bugs with multi polygons when I brought in a complex geology dataset.
 
-I had to impliment a lot of error handling for when turf attempts to read the JSON object as a polygon and execute intersect. If there is a geometry error I assume that the json object/polygon has deeper arrays in it's structure and continue to loop through the geeometry and attempt to convert it to a polygon. I do this for about "3 levels" and if it goes deeper than that I stop. For the complicated geology dataset this gave good results.
+I had to impliment a lot of error handling for when turf attempts to read the JSON object as a polygon and execute intersect. If there is a geometry error I assume that the json object/polygon has deeper arrays in it's structure and continue to loop through the geometry and attempt to convert it to a polygon. I do this for about "3 levels" and if it goes deeper than that I stop. For the complicated geology dataset this gave good results.
 
 I also had to simplify some of the topology for the geology dataset because it was causing errors with the Turf intersect function:
 
