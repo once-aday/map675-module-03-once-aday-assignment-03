@@ -19,6 +19,8 @@
 
 Create 2 datasets with overlapping Polygons. Choose an Attribute to monitor.
 
+![Overlapping Attributes](graphics/overlapping-intersecting-values.png)  
+
 I was able to get the script working by using the intersect method of turf
 
 There were lots of bugs with multi polygons when I brought in a complex geology dataset.
