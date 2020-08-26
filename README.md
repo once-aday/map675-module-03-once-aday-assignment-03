@@ -4,13 +4,13 @@
 
 **Client:**
 
-- Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute, Show Results
-- Center Points in Polygon - Client
+- Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute, Log Results, Show Intersecting Polygons on Map
+- Center Points in Polygon
 
 **Server:**
 
 - Distance from many polygons
-- Duplicate and Shift Points
+- Duplicate and Shift Lines
 
 ### Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute - Client
 
