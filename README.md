@@ -18,7 +18,7 @@ Create 2 datasets with overlapping Polygons. Choose an Attribute to monitor.
 
 ![Overlapping Attributes](graphics/overlapping-intersecting-values.png)  
 
-Given a multi polygon, and a single polygon representing a Zone of Tnterest. Choose an attribute from the multi-polygon; How many unique values from that attribute spatially intersect within the Zone of Interest?
+Given a multi polygon, and a single polygon representing a Zone of Interest. Choose an attribute from the multi-polygon; How many unique values from that attribute spatially intersect within the Zone of Interest?
 An array with these "Intersecting Attributes" will be logged to console. Only polygons that intersect with the ZoI will be loaded on the map.
 
 I was able to get the script working by using the intersect method of turf
