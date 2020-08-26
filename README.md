@@ -40,8 +40,10 @@ This script will take a specified point location and multipolygon dataset and de
 
 I had to dig into the turf FeatureEach looping function. It wasn't straightforward how to loop through the features without creating a sub-loop within the FeatureEach loop itself. This is something I need to look into and understand better in the future since it seems like an important feature of turf.
 
-### Duplicate and Shift Line
+### Duplicate and Shift Line - Server
 
-This script takes a Line, duplicates it, and shifts it x distance.
+This script takes a Line, duplicates it x times, and shifts it y distance each time it's duplicated.
+
+![Duplicate and Shifting Lines](graphics/duplicate-shift.png)  
 
 This was inspired by a project I did once at work where we wanted to map vineyard trellis rows, which are typically straight lines. Instead of manually drawing each one, we can draw one, (and knowing direction from North that it is plus the distance between rows), can duplicate it in the correct direction. After that we would clip it to the vineyard boundary.
