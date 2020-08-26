@@ -9,13 +9,10 @@
 
 **Server:**
 
-- Concatenate Attribute Results of Multi-Polygon (Dataset B) that Intersects with a Multi-Polygon (Dataset A) by a Specific Attribute. For Large Datasets.
-
 - Distance from many polygons
+- Duplicate and Shift Points
 
-
-
-### Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute
+### Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute - Client
 
 Create 2 datasets with overlapping Polygons. Choose an Attribute to monitor.
 
@@ -36,3 +33,15 @@ Here I use turf.cleanCoords to remove redudant coordinates from the geometry.
 https://turfjs.org/docs/#cleanCoords
 
 In that example I am also converting the raw JSON coordinates to a polygon and adding the attribute from the JSON object to the new Turf-ready Polygon. So that if there is a successful intersect that attribute value will carry over to the Polygon and I can also use it to push to the final intersectingAttributes array that is presented to that client.
+
+### Distance from many polygons - Server
+
+This script will take a specified point location and multipolygon dataset and determine the distance from that point to the different polygon shapes.
+
+I had to dig into the turf FeatureEach looping function. It wasn't straightforward how to loop through the features without creating a sub-loop within the FeatureEach loop itself. This is something I need to look into and understand better in the future since it seems like an important feature of turf.
+
+### Duplicate and Shift Line
+
+This script takes a Line, duplicates it, and shifts it x distance.
+
+This was inspired by a project I did once at work where we wanted to map vineyard trellis rows, which are typically straight lines. Instead of manually drawing each one, we can draw one, (and knowing direction from North that it is plus the distance between rows), can duplicate it in the correct direction. After that we would clip it to the vineyard boundary.
