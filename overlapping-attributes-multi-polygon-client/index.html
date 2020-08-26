@@ -37,7 +37,7 @@
       // create Leaflet map, centered on Texas
       var map = L.map("map", {
         zoomSnap: 0.1,
-        center: [43.317,-124.37996362367487,],
+        center: [43.317,-124.37996362367487],
         zoom: 14
       });
 
@@ -57,7 +57,7 @@
       // This can be a Polygon or Multi-Polygon
       const ds1 = d3.json("data/geology.json") // Test Dataset 1 (Simple)
       // const ds1 = d3.json("data/ds1.json") // Test Dataset 1 (Simple)
-      
+
       // The attribute name to monitor for overlaps
       const ds1AttributeName = "G_ROCK_TYP"
 

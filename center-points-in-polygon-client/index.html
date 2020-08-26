@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Center Points in Polygon</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    />
+
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+    <script>
+      // create Leaflet map, centered on Texas
+      var map = L.map("map", {
+        zoomSnap: 0.1,
+        center: [43.317,-124.37996362367487],
+        zoom: 15
+      });
+
+      // add a basemap of tiles
+      L.tileLayer(
+        "https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}.png",
+        {
+          maxZoom: 18,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy;<a href="https://carto.com/attribution">CARTO</a>'
+        }
+      ).addTo(map);
+
+      // request our js file
+      d3.json("ds1.json").then(function(data) {
+        drawMap(data);
+        // loop through the feature data
+        data.features.forEach(function(feature) {
+          console.log(feature)
+          var center = turf.center(feature);
+          console.log(center)
+          L.geoJSON(center).addTo(map);
+        });
+      });
+
+      function drawMap(data) {
+        var options = {
+          // style the hexagons
+          style: function(feature, layer) {
+            return {
+              color: "white",
+              weight: 2,
+              fillColor: "green",
+              fillOpacity: 1
+            };
+          }
+        };
+        L.geoJSON(data, options).addTo(map);
+      }
+    </script>
+  </body>
+</html>

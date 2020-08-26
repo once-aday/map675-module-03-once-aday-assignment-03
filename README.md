@@ -5,7 +5,7 @@
 **Client:**
 
 - Concatenate Attribute Results of overlapping Polygons within a Multi-polygon by a Specific Attribute, Show Results
-
+- Center Points in Polygon - Client
 
 **Server:**
 
@@ -46,4 +46,10 @@ This script takes a Line, duplicates it x times, and shifts it y distance each t
 
 ![Duplicate and Shifting Lines](graphics/duplicate-shift.png)  
 
-This was inspired by a project I did once at work where we wanted to map vineyard trellis rows, which are typically straight lines. Instead of manually drawing each one, we can draw one, (and knowing direction from North that it is plus the distance between rows), can duplicate it in the correct direction. After that we would clip it to the vineyard boundary.
+This was inspired by a project I did once at work where we wanted to map vineyard trellis rows, which are typically straight lines. Instead of manually drawing each row... we can draw one, (and knowing direction from North that it is plus the distance between rows), can duplicate it in the correct direction. After that we would clip it to the vineyard boundary.
+
+## Center Points in Polygon - Client
+
+![Center Points in Polygon](graphics/center-points-in-polygon.png)
+
+This script will take a polygon dataset and generate points at the center of each polygon. The points are added to the web map, on top of the polygon dataset, as they are generated.
